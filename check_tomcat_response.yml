@@ -1,0 +1,10 @@
+---
+- name: check the tomcat response
+  uri:
+   url: "{{item.a}}"
+   status_code: "{{item.b}}"
+  with_items:
+   - {a: "{{m}}",b: "{{p}}"}
+   - {a: "{{n}}",b: "{{p}}"}
+   - {a: "{{o}}",b: "{{p}}"}
+...

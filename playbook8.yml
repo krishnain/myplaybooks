@@ -1,0 +1,13 @@
+---
+- name: Create user using host scope varibales
+  hosts: 172.31.0.77
+  tasks:
+   - name: User creation
+     user:
+      name: "{{a}}"
+      password: "{{b}}"
+      home: "{{c}}"
+      shell: "{{d}}"
+      uid: "{{e}}"
+      comment: "{{f}}"
+...

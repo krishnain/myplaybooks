@@ -1,0 +1,16 @@
+---
+- name: Check ofr execute permissions and modify the permissions
+  hosts: all
+  tasks:
+   - name: Get detailed inof about file1
+     stat:
+      path: /tmp/file1
+     register: b
+   - name: Display output of the above module
+     debug:
+      var: b
+   - name: Check for execute permissions and change it
+     file:
+      name: /tmp/file1
+      mode: 740
+     when: b.stat.executable == false
